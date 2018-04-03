@@ -10,7 +10,7 @@ halve xs = do
 -- 2. define a function that takes the third element of a list
 -- 2.a using head and tail
 third :: [a] -> a
-third xs = (head . tail . tail) xs
+third = head . tail . tail
 
 -- 2.b using !!
 third' :: [a] -> a
@@ -76,4 +76,4 @@ luhnDouble x | x > 4 = x * 2
              | otherwise = (x * 2) - 9
 
 luhn :: Int -> Int -> Int -> Int -> Bool
-luhn a b c d = ((luhnDouble a) + b + (luhnDouble c) + d) `mod` 10 == 0
+luhn a b c d = (luhnDouble a + b + luhnDouble c + d) `mod` 10 == 0

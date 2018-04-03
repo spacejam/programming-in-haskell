@@ -53,4 +53,4 @@ encode :: Int -> String -> String
 encode n xs = [shift n x | x <- xs]
 
 decode :: Int -> String -> String
-decode n xs = encode (n `mod` 26) xs
+decode n = encode (n `mod` 26)
